@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.util.HashMap;
 
-public class HttpHeadersDemo {
+public class HttpHeadersParsers {
 
 	HashMap<String, String> headerNameValues = new HashMap<>();
 	int validHeadercount = 0;
@@ -16,7 +16,7 @@ public class HttpHeadersDemo {
 
 
 	public static void main(String args[]) throws IOException {
-		HttpHeadersDemo httpHeadersDemo = new HttpHeadersDemo();
+		HttpHeadersParsers httpHeadersDemo = new HttpHeadersParsers();
 		String result = httpHeadersDemo.ParseHttpResponse(HTTP_RESPONSE);
 		System.out.println(result);
 

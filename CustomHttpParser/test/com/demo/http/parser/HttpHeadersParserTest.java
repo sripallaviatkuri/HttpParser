@@ -5,11 +5,11 @@ import java.io.IOException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class HttpHeadersTest {
+class HttpHeadersParserTest {
 
 	@Test
 	void testParseHttpResponse() {
-		HttpHeadersDemo httpHeadersDemoTest = new HttpHeadersDemo();
+		HttpHeadersParsers httpHeadersDemoTest = new HttpHeadersParsers();
 		String httpResponse = "";
 
 		String parsedResult = null;
@@ -25,7 +25,7 @@ class HttpHeadersTest {
 
 	@Test
 	void testValidHttpResponse200() {
-		HttpHeadersDemo httpHeadersDemoTest = new HttpHeadersDemo();
+		HttpHeadersParsers httpHeadersDemoTest = new HttpHeadersParsers();
 
 		String httpResponse = "HTTP/1.0 200 OK\n" + "cache-control: public\n" + "content-length: 0\n"
 				+ "content-type: image/svg+xml\n" + "date: Tue, 22 Jun 2021 22:24:42 GMT";
@@ -48,7 +48,7 @@ class HttpHeadersTest {
 
 	@Test
 	void testValidHttpResponse302() {
-		HttpHeadersDemo httpHeadersDemoTest = new HttpHeadersDemo();
+		HttpHeadersParsers httpHeadersDemoTest = new HttpHeadersParsers();
 		String httpResponse = "HTTP/1.1 302 Found\n" + "cache-control: public\n" + "Transfer-encoding: chunked\n"
 				+ "invalid_header\n" + "date: Tue, 22 Jun 2021 22:24:42 GMT";
 
@@ -69,7 +69,7 @@ class HttpHeadersTest {
 
 	@Test
 	void testInvalidHttpResponse() {
-		HttpHeadersDemo httpHeadersDemoTest = new HttpHeadersDemo();
+		HttpHeadersParsers httpHeadersDemoTest = new HttpHeadersParsers();
 		String httpResponse = "Header1: value1\n" + "date: Tue, 22 Jun 2021 22:24:42 GMT\n" + "content-length: 1337";
 
 		String parsedResult = null;
